@@ -3,9 +3,10 @@ export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
-      colors: {
-        background: "hsl(var(--background) /<alpha-value>)",
-        foreground: "hsl(var(--foreground) /<alpha-value>)",
+      ccolors: {
+        background: "hsl(var(--background)/<alpha-value>)",
+        forground: "hsl(var(--forground)/<alpha-value>)",
+        bgCard: "hsl(var(--bg-card)/<alpha-value>)",
       },
       textColor: {
         background: "hsl(var(--background) /<alpha-value>)",

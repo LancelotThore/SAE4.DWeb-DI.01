@@ -3,18 +3,42 @@
 @tailwind utilities;
 
 @layer base {
-  :root {
-    /* Primitives Tokens  */
-    --clr-white: 0 0% 100%;
-    --clr-dark-grey: 0 0% 10%;
-    /* Sementics Tokens */
-    --foreground: var(--clr-dark-grey);
-    --background: var(--clr-white);
+    :root {
+        /* Primitive Tokens */
 
-    --radius: 0.5rem;
-    --gap: 1rem;
+        /* Primary */
+        --black: 0 0% 0%;
+        --white: 0 0% 100%;
+        --violet: 276 78% 54%;
+        --orange: 28 89% 53%;
+        --red: 358 80% 51%;
+        --dark-blue: 238 71% 7%;
+        --blue: 211 100% 50%;
+        --green: 140 100% 30%;
+        --grey: 233 5% 71%;
 
-    
-    
-  }
+        /* Secondary */
+        --light-green: 157 100% 35%;
+        --light-blue: 184 84% 48%;
+        --secondary-light-blue: 184 84% 48%;
+        --secondary-blue: 191 80% 50%;
+        --secondary-dark-blue: 230 91% 50%;
+        --blue-green: 197 74% 28%;
+        --light-grey: 240 7% 97%;
+
+        /* Semantics Tokens */
+        --background: var(--dark-blue);
+
+        /* Button */
+        --button: linear-gradient(var(--light-blue), var(--blue));
+        --button-hover: var(--secondary-light-blue);
+        --button-playlist: var(--grey);
+        
+        --border: var(--light-blue);
+
+        /* Text */
+        --forground: var(--white);
+        --text-direct: var(--secondary-blue);
+        --text-category: var(--grey);
+    }
 }
