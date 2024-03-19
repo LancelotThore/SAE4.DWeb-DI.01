@@ -1,33 +1,46 @@
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import { useState } from 'react';
+import { HomeButton, DirectButton, Catalogue, Search, Other } from '../../components/Icons';
 
 
 export default function NavBar() {
 
-    return (
+  const base = "flex flex-col items-center gap-0.5";
+  const text = "text-xs text-textNav";
+  const icon = "h-6";
 
-<nav
-  className="flex-no-wrap relative flex w-full items-center justify-between bg-zinc-50 py-2 shadow-dark-mild dark:bg-neutral-700 lg:flex-wrap lg:justify-start lg:py-4">
-  <div className="flex w-full flex-wrap items-center justify-between px-3"> 
-   
-    <div className="list-style-none me-auto flex flex-col ps-0 lg:flex-row text-white space-x-10">
-  
-        <div className="list-style-none me-auto flex flex-col ps-0 lg:flex-row text-white">
-          <Link className="mb-4 lg:mb-0 lg:pe-2 text-[#BBA]" to="/">Home</Link>
-          <Link className="mb-4 lg:mb-0 lg:pe-2 text-[#BBA]" to="/crash">Our Teams </Link>
-          <Link className="mb-4 lg:mb-0 lg:pe-2 hover:text-[#BBA] focus:text-[#BB0]" to="/team/sales">Sales</Link>
-          <Link className="mb-4 lg:mb-0 lg:pe-2 hover:text-[#BBA] focus:text-[#BB0]" to="/team/webdesign">Webdesign</Link>
-          <Link className="mb-4 lg:mb-0 lg:pe-2 hover:text-[#BBA] focus:text-[#BB0]" to="/team/development">Development</Link>
-        </div>
-        <div className="list-style-none me-auto flex flex-col ps-0 lg:flex-row text-white space-x-10">
-          <Link className="ml-15 mb-4 lg:mb-0 lg:pe-2 hover:text-[#BBA] focus:text-[#BB0]" to="/buy">Buy</Link>
-          <Link className="mb-4 lg:mb-0 lg:pe-2 hover:text-[#BBA] focus:text-[#BB0]" to="/about">?</Link>
-        </div>
-          
-    </div>
-    
-  </div>
-</nav>
-    );
+  const [color, setColor] = useState(false);
+  let handler = function () {
+    setColor(!color);
+  }
+
+  return (
+    <nav className='flex justify-around absolute bottom-0 p-3 w-screen bg-navBackground'>
+      <Link onClick={handler} className={base} to="/">
+        <HomeButton className={icon} color={color}/>
+        <p className={text}>Home</p>
+      </Link>
+
+      <Link onClick={handler} className={base} to="/direct">
+        <DirectButton className={icon} color={color}/>
+        <p className={text}>Direct</p>
+      </Link>
+
+      <Link onClick={handler} className={base} to="/catalogue">
+        <Catalogue className={icon} color={color}/>
+        <p className={text}>Catalogue</p>
+      </Link>
+
+      <Link onClick={handler} className={base} to="/search">
+        <Search className={icon} color={color}/>
+        <p className={text}>Seach</p>
+      </Link>
+
+      <Link onClick={handler} className={base} to="/other">
+        <Other className={icon} color={color}/>
+        <p className={text}>Other</p>
+      </Link>
+    </nav>
+  );
 
 }
-

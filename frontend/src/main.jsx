@@ -17,14 +17,20 @@ const router = createBrowserRouter([
     errorElement: <ErrorPage />,
     children: [
       {
-        path: '/buy',
-        element: <Buy />,
-        loader: buyLoader
+        path: '/direct',
+        
       },
       {
-        path: '/team/:teamName',
-        element: <OurTeams />,
-        loader: ourTeamLoader
+        path: '/catalogue',
+        
+      },
+      {
+        path: '/search',
+        
+      },
+      {
+        path: '/other',
+        
       }
     ]
   },

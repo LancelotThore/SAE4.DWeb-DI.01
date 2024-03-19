@@ -3,28 +3,26 @@ export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
-      ccolors: {
+      colors: {
+        /* Background */
         background: "hsl(var(--background)/<alpha-value>)",
+        navBackground: "hsl(var(--nav-background)/<alpha-value>)",
+
+        /* Text */
         forground: "hsl(var(--forground)/<alpha-value>)",
-        bgCard: "hsl(var(--bg-card)/<alpha-value>)",
-      },
-      textColor: {
-        background: "hsl(var(--background) /<alpha-value>)",
-        foreground: "hsl(var(--foreground) /<alpha-value>)",
-      },
-      maxWidth: {
-        ch: "60ch",
-      },
-      aspectRatio: {
-        card: "1 / 1.25",
-      },
-      backgroundImage: {
-        shape: "url('./assets/bgshapes.svg')",
-      },
-      borderRadius: {
-        DEFAULT: "var(--radius)",
+        textDirect: "hsl(var(--text-direct)/<alpha-value>)",
+        textNav: "hsl(var(--text-nav)/<alpha-value>)",
+        textCategory: "hsl(var(--text-category)/<alpha-value>)",
+
+        /* Button */
+        button: "hsl(var(--button)/<alpha-value>)",
+        buttonHover: "hsl(var(--button-hover)/<alpha-value>)",
+        buttonPlaylist: "hsl(var(--button-playlist)/<alpha-value>)",
+
+        /* Border */
+        border: "hsl(var(--border)/<alpha-value>)",
       },
     },
-  },
-  plugins: [],
+    plugins: [],
+  }
 };
