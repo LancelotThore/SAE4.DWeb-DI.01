@@ -1,45 +1,41 @@
-import { Link } from 'react-router-dom';
-import { useState } from 'react';
+import { NavLink } from 'react-router-dom';
 import { HomeButton, DirectButton, Catalogue, Search, Other } from '../../components/Icons';
 
 
 export default function NavBar() {
 
-  const base = "flex flex-col items-center gap-0.5";
-  const text = "text-xs text-textNav";
+  const text = "text-xs";
   const icon = "h-6";
 
-  const [color, setColor] = useState(false);
-  let handler = function () {
-    setColor(!color);
-  }
+  const classActive = ({ isActive }) =>
+    isActive ? "text-forground flex flex-col items-center gap-0.5" : "text-textNav flex flex-col items-center gap-0.5"
 
   return (
     <nav className='flex justify-around absolute bottom-0 p-3 w-screen bg-navBackground'>
-      <Link onClick={handler} className={base} to="/">
-        <HomeButton className={icon} color={color}/>
+      <NavLink className={classActive} to="/">
+        <HomeButton className={icon}/>
         <p className={text}>Home</p>
-      </Link>
+      </NavLink>
 
-      <Link onClick={handler} className={base} to="/direct">
-        <DirectButton className={icon} color={color}/>
+      <NavLink className={classActive} to="/direct">
+        <DirectButton className={icon}/>
         <p className={text}>Direct</p>
-      </Link>
+      </NavLink>
 
-      <Link onClick={handler} className={base} to="/catalogue">
-        <Catalogue className={icon} color={color}/>
+      <NavLink className={classActive} to="/catalogue">
+        <Catalogue className={icon}/>
         <p className={text}>Catalogue</p>
-      </Link>
+      </NavLink>
 
-      <Link onClick={handler} className={base} to="/search">
-        <Search className={icon} color={color}/>
+      <NavLink className={classActive} to="/search">
+        <Search className={icon}/>
         <p className={text}>Seach</p>
-      </Link>
+      </NavLink>
 
-      <Link onClick={handler} className={base} to="/other">
-        <Other className={icon} color={color}/>
+      <NavLink className={classActive} to="/other">
+        <Other className={icon}/>
         <p className={text}>Other</p>
-      </Link>
+      </NavLink>
     </nav>
   );
 
