@@ -8,22 +8,26 @@ use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Serializer\Annotation\Groups;
 
+
 #[ORM\Entity(repositoryClass: CategoryRepository::class)]
 #[Groups(['json_category'])]
 class Category
 {
-    #[ORM\Id]
-    #[ORM\GeneratedValue]
-    #[ORM\Column]
-    #[Groups(['json_movie'])]
-    private ?int $id = null;
+   #[ORM\Id]
+   #[ORM\GeneratedValue]
+   #[ORM\Column]
+   #[Groups(['json_movie'])]
+   private ?int $id = null;
 
-    #[ORM\Column(length: 255)]
-    #[Groups(['json_movie'])]
-    private ?string $name = null;
 
-    #[ORM\ManyToMany(targetEntity: Movie::class, mappedBy: 'category')]
-    private Collection $movies;
+   #[ORM\Column(length: 255)]
+   #[Groups(['json_movie'])]
+   private ?string $name = null;
+
+
+   #[ORM\ManyToMany(targetEntity: Movie::class, mappedBy: 'category')]
+   private Collection $movies;
+
 
     public function __construct()
     {
@@ -33,7 +37,7 @@ class Category
     public function __toString(): string
     {
         return $this->name;
-    }
+    } 
 
     public function getId(): ?int
     {

@@ -43,7 +43,7 @@ services:
     environment:
       MYSQL_ROOT_PASSWORD: root
       MYSQL_DATABASE: "SAE4_DWeb_DI_01"
-  
+
   phpmyadmin:
     container_name: sae-phpmyadmin
     image: phpmyadmin/phpmyadmin

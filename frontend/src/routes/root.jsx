@@ -7,8 +7,10 @@ export default function Root() {
 
   return (
     <>
-      <Header />
-      <NavBar />
+      <section className='bg-background text-forground w-screen h-screen flex'>
+        <NavBar />
+        <Card />
+      </section>
     </>
   );
 }
