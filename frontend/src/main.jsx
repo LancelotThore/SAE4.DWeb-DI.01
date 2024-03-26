@@ -4,9 +4,8 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 import Root from './routes/root.jsx';
 import About from './routes/about.jsx';
-import Buy, {loader as buyLoader} from './routes/buy.jsx';
-import OurTeams, {loader as ourTeamLoader} from './routes/ourTeams.jsx';
 import ErrorPage from './ui/ErrorPage/index.jsx';
+import { loader as listLoader } from './ui/List/index.jsx';
 
 import './index.css';
 
@@ -18,6 +17,7 @@ const router = createBrowserRouter([
     children: [
       {
         path: '/direct',
+        loader: listLoader,
         
       },
       {

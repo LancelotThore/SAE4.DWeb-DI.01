@@ -10,7 +10,7 @@ export default function Root() {
     <>
       <section className='bg-background text-forground w-screen h-screen flex'>
         <NavBar />
-        <List />
+        <Outlet />
       </section>
     </>
   );

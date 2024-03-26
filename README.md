@@ -27,3 +27,9 @@ docker-compose up -d
 - Frontend : [http://localhost:8090](http://localhost:8090)
 - Backend : [http://localhost:8080](http://localhost:8080)
 - phpMyAdmin : [http://localhost:8070](http://localhost:8070)
+
+# Problème Corps
+```
+$ composer require nelmio/cors-bundle
+```
+[https://symfony.com/bundles/NelmioCorsBundle/current/index.html]
