@@ -1,5 +1,5 @@
 import { NavLink } from 'react-router-dom';
-import { HomeButton, DirectButton, Catalogue, Search, Other } from '../../components/Icons';
+import { HomeButton, DirectButton, Catalogue, Search, Other } from '../Icons';
 
 
 export default function NavBar() {
