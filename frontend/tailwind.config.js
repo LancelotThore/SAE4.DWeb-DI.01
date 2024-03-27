@@ -3,6 +3,9 @@ export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
+      fontFamily: {
+        'montserrat': ['Montserrat', 'sans-serif'],
+      },
       colors: {
         /* Background */
         background: "hsl(var(--background)/<alpha-value>)",
@@ -21,6 +24,9 @@ export default {
 
         /* Border */
         border: "hsl(var(--border)/<alpha-value>)",
+      },
+      backgroundImage: {
+        'hero': "url('/VivaRai2!.webp')",
       },
     },
     plugins: [],
