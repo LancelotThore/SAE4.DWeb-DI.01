@@ -1,7 +1,7 @@
 export default function Header() {
     return (
         <header className="relative w-full h-fit flex flex-col md:flex-row md:items-center">
-            <div class="w-full h-[47vh] bg-hero bg-cover md:order-2"></div>
+            <div className="w-full h-[47vh] bg-hero bg-cover md:order-2"></div>
             <div className="relative z-10 p-4 -mt-32 md:mt-0 md:order-1">
                 <div className="flex flex-col gap-2">
                     <p className="text-base">Le interviste di Peter Gomez</p>
