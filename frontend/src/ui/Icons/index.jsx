@@ -1,11 +1,10 @@
 import { useState } from 'react';
 
-function HomeButton({ color, fill, ...props }) {
+function HomeButton({ fill, ...props }) {
 
     return (
         <svg dataslot="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 42 42" {...props}>
             <path
-                // fill={color ? "#fff" : "#b1b2b6"}
                 fill="currentColor"
                 fillRule="evenodd"
                 d="M41 19.8L21 3 1 19.8l2 2.3 3.6-3v15.6c0 2.4 2 4.3 4.4 4.3h20.2c2.4 0 4.3-1.9 4.4-4.3V19.1l3.6 3 1.8-2.3zm-8.6 14.8c0 .7-.6 1.4-1.4 1.4h-6.9v-9h-6.3v9h-6.9c-.7 0-1.4-.6-1.4-1.3V16.6L21 7l11.4 9.6v18z"
@@ -16,7 +15,7 @@ function HomeButton({ color, fill, ...props }) {
     );
 }
 
-function DirectButton({ color, ...props }) {
+function DirectButton({ ...props }) {
     return (
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" {...props}
         >
@@ -30,7 +29,7 @@ function DirectButton({ color, ...props }) {
     );
 }
 
-function Catalogue({ color, ...props }) {
+function Catalogue({ ...props }) {
     return (
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 42 42" {...props}>
             <path
@@ -42,7 +41,7 @@ function Catalogue({ color, ...props }) {
     );
 }
 
-function Search({ color, ...props }) {
+function Search({ ...props }) {
     return (
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 42 42" {...props}>
             <path
@@ -53,7 +52,7 @@ function Search({ color, ...props }) {
     );
 }
 
-function Other({ color, ...props }) {
+function Other({ ...props }) {
     return (
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 42 42" {...props}>
             <path
@@ -64,4 +63,39 @@ function Other({ color, ...props }) {
     );
 }
 
-export { HomeButton, DirectButton, Catalogue, Search, Other };
+function Burger({ ...props }) {
+    return (
+        <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 32 32"
+            {...props}
+        >
+            <path
+                fill="currentColor"
+                d="M25 6H3a1 1 0 000 2h22a1 1 0 100-2zM29 15H3a1 1 0 000 2h26a1 1 0 000-2zM3 26h13a1 1 0 000-2H3a1 1 0 000 2z"
+            ></path>
+        </svg>
+    );
+}
+
+function Cross({ ...props }) {
+    return (
+        <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            {...props}
+        >
+            <path fill='currentColor' d="M5.3 18.7c.2.2.4.3.7.3s.5-.1.7-.3l5.3-5.3 5.3 5.3c.2.2.5.3.7.3s.5-.1.7-.3c.4-.4.4-1 0-1.4L13.4 12l5.3-5.3c.4-.4.4-1 0-1.4s-1-.4-1.4 0L12 10.6 6.7 5.3c-.4-.4-1-.4-1.4 0s-.4 1 0 1.4l5.3 5.3-5.3 5.3c-.4.4-.4 1 0 1.4z"></path>
+        </svg>
+    );
+}
+
+function CursorCross({ ...props}) {
+    return (
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" {...props}>
+            <path fill='currentColor' d="M28.71 4.71L27.29 3.29 16 14.59 4.71 3.29 3.29 4.71 14.59 16 3.29 27.29 4.71 28.71 16 17.41 27.29 28.71 28.71 27.29 17.41 16 28.71 4.71z"></path>
+        </svg>
+    );
+}
+
+export { HomeButton, DirectButton, Catalogue, Search, Other, Burger, Cross, CursorCross };

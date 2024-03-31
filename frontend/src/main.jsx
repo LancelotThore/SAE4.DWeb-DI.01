@@ -8,6 +8,7 @@ import ErrorPage from './ui/ErrorPage/index.jsx';
 import { loader as listLoader } from './ui/List/index.jsx';
 
 import './index.css';
+import Home from './routes/home.jsx';
 
 const router = createBrowserRouter([
   {
@@ -16,9 +17,12 @@ const router = createBrowserRouter([
     errorElement: <ErrorPage />,
     children: [
       {
+        path: '/',
+        element: <Home />,
+      },
+      {
         path: '/direct',
         loader: listLoader,
-        
       },
       {
         path: '/catalogue',
@@ -31,6 +35,13 @@ const router = createBrowserRouter([
       {
         path: '/other',
         
+      },
+      {
+        path: '/settings',
+        
+      },
+      {
+        path: '/support',
       }
     ]
   },

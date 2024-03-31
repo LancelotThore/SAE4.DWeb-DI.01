@@ -4,12 +4,14 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        'montserrat': ['Montserrat', 'sans-serif'],
+        'sans': ['Montserrat', 'sans-serif'],
       },
+      
       colors: {
         /* Background */
         background: "hsl(var(--background)/<alpha-value>)",
         navBackground: "hsl(var(--nav-background)/<alpha-value>)",
+        openNavBackground: "hsl(var(--open-nav-background)/<alpha-value>)",
 
         /* Text */
         forground: "hsl(var(--forground)/<alpha-value>)",
@@ -27,6 +29,9 @@ export default {
       },
       backgroundImage: {
         'hero': "url('/VivaRai2!.webp')",
+      },
+      cursor: {
+        'crossCursor': `url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/PjxzdmcgaWQ9Ik91dGxpbmVkIiB2aWV3Qm94PSIwIDAgMzIgMzIiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHRpdGxlLz48ZyBpZD0iRmlsbCI+PHBvbHlnb24gcG9pbnRzPSIyOC43MSA0LjcxIDI3LjI5IDMuMjkgMTYgMTQuNTkgNC43MSAzLjI5IDMuMjkgNC43MSAxNC41OSAxNiAzLjI5IDI3LjI5IDQuNzEgMjguNzEgMTYgMTcuNDEgMjcuMjkgMjguNzEgMjguNzEgMjcuMjkgMTcuNDEgMTYgMjguNzEgNC43MSIvPjwvZz48L3N2Zz4='), auto`,
       },
     },
     plugins: [],

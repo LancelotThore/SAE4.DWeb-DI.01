@@ -1,7 +1,8 @@
-import { NavLink } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import { HomeButton, DirectButton, Catalogue, Search, Other } from '../Icons';
+import MenuBurger from './MenuBurger';
 
-export default function NavBar() {
+function NavBar() {
   const base = "flex flex-col items-center gap-0.5";
   const text = "text-xs";
   const icon = "h-6";
@@ -28,7 +29,7 @@ export default function NavBar() {
 
       <NavLink className={classActive} to="/search">
         <Search className={icon}/>
-        <p className={text}>Search</p> {/* Corrected typo */}
+        <p className={text}>Search</p>
       </NavLink>
 
       <NavLink className={classActive} to="/other">
@@ -38,3 +39,14 @@ export default function NavBar() {
     </nav>
   );
 }
+
+function NavBarDesktop({ ...props}) {
+  return (
+    <div className='flex items-center'>
+      <MenuBurger {...props}/>
+      <Link to="/"><img className="w-24 absolute md:relative lg:relative z-10 m-4" src="/logo.webp" alt="" /></Link>
+    </div>
+  )
+}
+
+export { NavBar, NavBarDesktop };
