@@ -26,7 +26,7 @@ class ApiController extends AbstractController
     public function readMovies(MovieRepository $movieRepository, SerializerInterface $serializer): Response
     {
       $movies = $movieRepository->findAll();
-      $data = $serializer->normalize($movies, null, ['groups' => 'json_movies']);
+      $data = $serializer->normalize($movies, null, ['groups' => 'json_movie']);
       $response = new JsonResponse($data);
       return $response;
     }
@@ -43,7 +43,7 @@ class ApiController extends AbstractController
     public function readCategories(CategoryRepository $categoryRepository, SerializerInterface $serializer): Response
     {
       $categories = $categoryRepository->findAll();
-      $data = $serializer->normalize($categories, null, ['groups' => 'json_categories']);
+      $data = $serializer->normalize($categories, null, ['groups' => 'json_category']);
       $response = new JsonResponse($data);
       return $response;
     }

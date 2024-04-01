@@ -19,10 +19,10 @@ const router = createBrowserRouter([
       {
         path: '/',
         element: <Home />,
+        loader: listLoader,
       },
       {
         path: '/direct',
-        loader: listLoader,
       },
       {
         path: '/catalogue',
