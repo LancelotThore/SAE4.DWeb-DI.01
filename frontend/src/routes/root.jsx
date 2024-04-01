@@ -6,13 +6,13 @@ import Header from '../ui/Header';
 import List from '../ui/List';
 
 export default function Root() {
-  const isSmallScreen = useMediaQuery({ query: '(max-width: 650px)' });
+  const isSmallScreen = useMediaQuery({ query: '(max-width: 640px)' });
 
   return (
     <>
-      <section className='bg-background text-forground w-screen h-screen flex flex-col font-montserrat relative'>
+      <section className='text-forground flex flex-col font-montserrat relative'>
         <div className='flex items-center'>
-          {isSmallScreen ? <NavBar className="text-forground hover:text-border w-7 h-7 m-4"/> : <NavBarDesktop className="text-forground hover:text-border w-7 h-7 m-4"/>}
+          {isSmallScreen ? <NavBar /> : <NavBarDesktop className="w-7 h-7 m-4"/>}
         </div>
         <Outlet />
       </section>

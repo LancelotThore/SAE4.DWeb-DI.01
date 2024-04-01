@@ -19,7 +19,7 @@
         --green: 140 100% 30%;
         --grey: 233 5% 71%;
         /* #b1b2b9 */
-        --test: #16a8c7;
+        --test: hsl(237, 22%, 16%);
 
         /* Secondary */
         --light-green: 157 100% 35%;

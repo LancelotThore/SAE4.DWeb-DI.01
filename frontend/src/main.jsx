@@ -41,6 +41,9 @@ const router = createBrowserRouter([
       },
       {
         path: '/support',
+      },
+      {
+        path: '/playlist',
       }
     ]
   },
