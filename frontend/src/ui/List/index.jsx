@@ -1,23 +1,29 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import Card from "./Card";
 
-export async function loader() {
-    let response = await fetch("http://localhost:8080/api/movie/");
-    let data = await response.json();
-    return data;
-}
+export default function List({movies=[]}) {
+    const [currentIndex, setCurrentIndex] = useState(0);
 
-export default function List(props) {
+    function goToLeft() {
+        setCurrentIndex(oldIndex => oldIndex === 0 ? movies.length - 1 : oldIndex - 1);
+    }
+
+    function goToRight() {
+        setCurrentIndex(oldIndex => oldIndex === movies.length - 1 ? 0 : oldIndex + 1);
+    }
+
     return (
-        <section>
-            <p>A ne pas manquer</p>
-            <ul className="flex gap-1 flex-wrap">
-                {movies.map(movie => (
-                    <li className="w-32" key={movie.id}>
-                        <Card data={movie} />
-                    </li>
-                ))}
-            </ul>
+        <section className="my-3 mx-7">
+            <p className="pb-2">A ne pas manquer</p>
+            <div className="flex overflow-x-scroll hide-scrollbar">
+                <ul className="flex gap-2 flex-nowrap">
+                    {movies.map((movie, index) => (
+                        <li className="w-32 h-44 md:w-40 md:h-52 relative" key={movie.id}>
+                            <Card data={movie} />
+                        </li>
+                    ))}
+                </ul>
+            </div>
         </section>
     );
 }

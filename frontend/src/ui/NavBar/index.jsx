@@ -42,7 +42,7 @@ function NavBar() {
 
 function NavBarDesktop({ ...props}) {
   return (
-    <div className='flex items-center'>
+    <div className='flex items-center h-[4.5rem] z-40'>
       <MenuBurger {...props}/>
       <Link to="/"><img className="w-24 absolute md:relative lg:relative z-10 m-4" src="/logo.webp" alt="" /></Link>
     </div>

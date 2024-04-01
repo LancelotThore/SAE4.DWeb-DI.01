@@ -5,10 +5,9 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Root from './routes/root.jsx';
 import About from './routes/about.jsx';
 import ErrorPage from './ui/ErrorPage/index.jsx';
-import { loader as listLoader } from './ui/List/index.jsx';
+import Home, { loader as homeLoader } from './routes/home.jsx';
 
 import './index.css';
-import Home from './routes/home.jsx';
 
 const router = createBrowserRouter([
   {
@@ -19,7 +18,7 @@ const router = createBrowserRouter([
       {
         path: '/',
         element: <Home />,
-        loader: listLoader,
+        loader: homeLoader,
       },
       {
         path: '/direct',
