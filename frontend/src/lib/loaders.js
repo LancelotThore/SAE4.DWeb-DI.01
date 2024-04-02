@@ -32,3 +32,9 @@ export async function fetchMovies() {
     let data = await answer.json();
     return data;
 }
+
+export async function fetchCategories() {
+    let answer = await fetch("http://localhost:8080/api/category/");
+    let data = await answer.json();
+    return data;
+}

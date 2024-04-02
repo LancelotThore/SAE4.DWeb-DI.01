@@ -28,6 +28,7 @@ class Movie
     private Collection $category;
 
     #[ORM\Column(length: 255)]
+    #[Groups(['json_category'])]
     private ?string $Image = null;
 
     public function __construct()

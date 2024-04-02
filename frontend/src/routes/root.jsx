@@ -1,9 +1,7 @@
 import { useMediaQuery } from 'react-responsive';
-import { Link, Outlet } from 'react-router-dom';
+import { Outlet } from 'react-router-dom';
 import { NavBar, NavBarDesktop } from '../ui/NavBar'
-import Card from '../ui/List/Card';
-import Header from '../ui/Header';
-import List from '../ui/List';
+import Footer from '../ui/Footer';
 
 export default function Root() {
   const isSmallScreen = useMediaQuery({ query: '(max-width: 640px)' });
@@ -16,6 +14,8 @@ export default function Root() {
         </div>
         <Outlet />
       </section>
+
+      <Footer />
     </>
   );
 }
