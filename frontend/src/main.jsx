@@ -7,8 +7,10 @@ import About from './routes/about.jsx';
 import ErrorPage from './ui/ErrorPage/index.jsx';
 import Home, { loader as homeLoader } from './routes/home.jsx';
 import MoviePage, { loader as moviePageLoader } from './routes/moviePage.jsx';
+import WatchMovie, { loader as watchMovieLoader} from './routes/watchMovie.jsx';
 
 import './index.css';
+import CataloguePage, { loader as catalogueLoader } from './routes/cataloguePage.jsx';
 
 const router = createBrowserRouter([
   {
@@ -26,7 +28,8 @@ const router = createBrowserRouter([
       },
       {
         path: '/catalogue',
-
+        element: <CataloguePage />,
+        loader: catalogueLoader,
       },
       {
         path: '/search',
@@ -47,16 +50,17 @@ const router = createBrowserRouter([
         path: '/playlist',
       },
       {
-        path: '/:movieId',
+        path: '/film/:movieId',
         element: <MoviePage />,
         loader: ({ params }) => moviePageLoader({ id: params.movieId }),
-      }
-]
+      },
+    ]
   },
-{
-  path: '/about',
-    element: <About />
-},
+  {
+    path: '/regarder/:movieId',
+    element: <WatchMovie />,
+    loader: ({ params }) => watchMovieLoader({ id: params.movieId }),
+  }
 ]);
 
 const rootElement = document.querySelector('#root');

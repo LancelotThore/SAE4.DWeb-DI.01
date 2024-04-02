@@ -44,3 +44,15 @@ export async function fetchCategories() {
     let data = await answer.json();
     return data;
 }
+
+export async function fetchCategoriesName() {
+    let answer = await fetch("http://localhost:8080/api/category/name/");
+    let data = await answer.json();
+    return data;
+}
+
+export async function fetchCategory({id}) {
+    let answer = await fetch(`http://localhost:8080/api/category/${id}`);
+    let data = await answer.json();
+    return data;
+}

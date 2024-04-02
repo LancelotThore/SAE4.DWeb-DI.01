@@ -129,4 +129,39 @@ function LogoFacebook({ ...props }) {
     );
 }
 
-export { HomeButton, DirectButton, Catalogue, Search, Other, Burger, Cross, CursorCross, LogoX, LogoFacebook };
+function ArrowRight({ ...props }) {
+    return (
+        <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            {...props}
+        >
+            <path
+                fill="currentColor"
+                d="M18.553 11.776L6.158 5.58A.8.8 0 005 6.294v11.412a.8.8 0 001.158.715l12.395-6.197a.25.25 0 000-.448z"
+            ></path>
+        </svg>
+    );
+}
+
+function ArrowLeft({ ...props }) {
+    return (
+        <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            {...props}
+        >
+            <path
+                stroke="currentColor"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="1.5"
+                d="M20 12H4m0 0l6-6m-6 6l6 6"
+            ></path>
+        </svg>
+    );
+}
+
+export { HomeButton, DirectButton, Catalogue, Search, Other, Burger, Cross, CursorCross, LogoX, LogoFacebook, ArrowRight, ArrowLeft };

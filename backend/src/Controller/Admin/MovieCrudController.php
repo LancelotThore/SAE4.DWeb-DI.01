@@ -27,6 +27,7 @@ class MovieCrudController extends AbstractCrudController
             ->setUploadedFileNamePattern('[randomhash].[extension]') // Le nom du fichier sera un hash aléatoire
             ->setRequired(false); // Le champ image n'est pas obligatoire
         yield TextField::new('description');
+        yield TextField::new('video');
     }
     
 }

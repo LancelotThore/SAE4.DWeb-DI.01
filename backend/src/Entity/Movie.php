@@ -17,23 +17,27 @@ class Movie
    #[ORM\Id]
    #[ORM\GeneratedValue]
    #[ORM\Column]
-   #[Groups(['json_category'])]
+   #[Groups(['json_movies', 'json_category'])]
    private ?int $id = null;
 
 
     #[ORM\Column(length: 255)]
-    #[Groups(['json_category'])]
+    #[Groups(['json_movies', 'json_category'])]
     private ?string $name = null;
 
     #[ORM\ManyToMany(targetEntity: Category::class, inversedBy: 'movies')]
+    #[Groups(['json_movies'])]
     private Collection $category;
 
     #[ORM\Column(length: 255)]
-    #[Groups(['json_category'])]
+    #[Groups(['json_movies', 'json_category'])]
     private ?string $image = null;
 
     #[ORM\Column(type: Types::TEXT)]
     private ?string $description = null;
+
+    #[ORM\Column(length: 255)]
+    private ?string $video = null;
 
     public function __construct()
     {
@@ -101,6 +105,18 @@ class Movie
     public function setDescription(string $description): static
     {
         $this->description = $description;
+
+        return $this;
+    }
+
+    public function getVideo(): ?string
+    {
+        return $this->video;
+    }
+
+    public function setVideo(string $video): static
+    {
+        $this->video = $video;
 
         return $this;
     }
