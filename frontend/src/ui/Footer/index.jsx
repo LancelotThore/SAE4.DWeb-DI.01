@@ -2,7 +2,7 @@ import { LogoFacebook, LogoX } from "../Icons";
 
 export default function Footer() {
     return (
-        <footer className="pb-[4rem] text-forground relative bottom-0">
+        <footer className="pb-[4rem] text-forground relative end-0">
             <ul className="flex items-center justify-center">
                 <li className="flex flex-col items-center">
                     <LogoX className="w-4 h-4"/>

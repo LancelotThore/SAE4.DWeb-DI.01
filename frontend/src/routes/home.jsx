@@ -1,20 +1,23 @@
-import { fetchCategories } from "../lib/loaders";
+import { fetchCategories, fetchMovie } from "../lib/loaders";
 import Header from "../ui/Header";
 import List from "../ui/List";
 import { useLoaderData } from 'react-router-dom';
 
 export async function loader() {
-    return await fetchCategories();
+    const categories = await fetchCategories();
+    const movie = await fetchMovie({id: 2});
+
+    return { categories, movie };
 }
 
 export default function Home() {
-    const data = useLoaderData();
+    const { categories, movie } = useLoaderData();
 
     return (
         <>
-            <Header />
+            <Header data={movie} />
             <ul>
-                {data.map((cat, index) => (
+                {categories.map((cat, index) => (
                     <List key={cat.id} cat={cat} />
                 ))}
             </ul>

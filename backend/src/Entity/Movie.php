@@ -29,7 +29,7 @@ class Movie
 
     #[ORM\Column(length: 255)]
     #[Groups(['json_category'])]
-    private ?string $Image = null;
+    private ?string $image = null;
 
     public function __construct()
     {
@@ -79,12 +79,12 @@ class Movie
 
     public function getImage(): ?string
     {
-        return $this->Image;
+        return $this->image;
     }
 
-    public function setImage(string $Image): static
+    public function setImage(string $image): static
     {
-        $this->Image = $Image;
+        $this->image = $image;
 
         return $this;
     }

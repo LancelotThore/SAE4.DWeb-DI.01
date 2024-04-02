@@ -7,15 +7,11 @@ export default function Root() {
   const isSmallScreen = useMediaQuery({ query: '(max-width: 640px)' });
 
   return (
-    <>
-      <section className='text-forground flex flex-col font-montserrat relative'>
-        <div className='flex items-center'>
-          {isSmallScreen ? <NavBar /> : <NavBarDesktop className="w-7 h-7 m-4"/>}
-        </div>
-        <Outlet />
-      </section>
-
-      <Footer />
-    </>
+    <section className='text-forground flex flex-col font-montserrat relative min-h-screen pb-[4rem]'>
+      <div className='flex items-center'>
+        {isSmallScreen ? <NavBar /> : <NavBarDesktop className="w-7 h-7 m-4" />}
+      </div>
+      <Outlet />
+    </section>
   );
 }

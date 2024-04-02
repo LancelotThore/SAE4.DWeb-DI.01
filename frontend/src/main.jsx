@@ -1,4 +1,4 @@
-import React, { Children } from 'react';
+import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
@@ -6,6 +6,7 @@ import Root from './routes/root.jsx';
 import About from './routes/about.jsx';
 import ErrorPage from './ui/ErrorPage/index.jsx';
 import Home, { loader as homeLoader } from './routes/home.jsx';
+import MoviePage, { loader as moviePageLoader } from './routes/MoviePage.jsx';
 
 import './index.css';
 
@@ -25,32 +26,37 @@ const router = createBrowserRouter([
       },
       {
         path: '/catalogue',
-        
+
       },
       {
         path: '/search',
-        
+
       },
       {
         path: '/other',
-        
+
       },
       {
         path: '/settings',
-        
+
       },
       {
         path: '/support',
       },
       {
         path: '/playlist',
+      },
+      {
+        path: '/:movieId',
+        element: <MoviePage />,
+        loader: ({ params }) => moviePageLoader({ id: params.movieId }),
       }
-    ]
+]
   },
-  {
-    path: '/about',
+{
+  path: '/about',
     element: <About />
-  },
+},
 ]);
 
 const rootElement = document.querySelector('#root');
