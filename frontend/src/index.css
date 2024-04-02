@@ -19,7 +19,7 @@
         --green: 140 100% 30%;
         --grey: 233 5% 71%;
         /* #b1b2b9 */
-        --test: hsl(237, 22%, 16%);
+        --test: hsl(198, 85%, 73%);
 
         /* Secondary */
         --light-green: 157 100% 35%;
@@ -37,14 +37,16 @@
         --open-nav-background: var(--black);
 
         /* Button */
-        --button: linear-gradient(var(--light-blue), var(--blue));
+        --buttonA: var(--light-blue);
+        --buttonB: var(--blue);
         --button-hover: var(--secondary-light-blue);
         --button-playlist: var(--grey);
 
         --border: var(--light-blue);
 
         /* Text */
-        --forground: var(--white);
+        --foreground: var(--white);
+        --text-button: var(--black);
         --text-direct: var(--secondary-blue);
         --text-nav: var(--grey);
 

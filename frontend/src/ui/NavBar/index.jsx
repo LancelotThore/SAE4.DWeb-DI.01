@@ -12,7 +12,7 @@ function NavBar() {
 
   return (
     <>
-      <Link to="/"><img className="w-24 absolute top-0 m-4" src="/logo.webp" alt="" /></Link>
+      <Link to="/"><img className="w-24 absolute top-0 m-4 z-40" src="/logo.webp" alt="" /></Link>
 
       <nav className='flex justify-around fixed bottom-0 p-3 w-screen bg-navBackground z-40'>
         

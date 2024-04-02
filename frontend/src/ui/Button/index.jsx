@@ -19,9 +19,17 @@ const button = cva(base, {
         "border-gray-400",
         "hover:bg-gray-100",
       ],
+      tertiary: [
+        "text-start",
+        "text-textButton",
+        "font-bold",
+        "bg-gradient-to-r from-buttonA to-buttonB",
+        "hover:bg-gray-100",
+        "rounded"
+      ],
     },
     size: {
-      small: ["text-sm", "py-1", "px-2"],
+      small: ["text-sm", "py-2.5", "px-3.5"],
       medium: ["text-base", "py-2", "px-4"],
     },
   },

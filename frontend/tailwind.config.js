@@ -14,13 +14,15 @@ export default {
         openNavBackground: "hsl(var(--open-nav-background)/<alpha-value>)",
 
         /* Text */
-        forground: "hsl(var(--forground)/<alpha-value>)",
+        forground: "hsl(var(--foreground)/<alpha-value>)",
+        textButton: "hsl(var(--text-button)/<alpha-value>)",
         textDirect: "hsl(var(--text-direct)/<alpha-value>)",
         textNav: "hsl(var(--text-nav)/<alpha-value>)",
         textCategory: "hsl(var(--text-category)/<alpha-value>)",
 
         /* Button */
-        button: "hsl(var(--button)/<alpha-value>)",
+        buttonA: "hsl(var(--buttonA)/<alpha-value>)",
+        buttonB: "hsl(var(--buttonB)/<alpha-value>)",
         buttonHover: "hsl(var(--button-hover)/<alpha-value>)",
         buttonPlaylist: "hsl(var(--button-playlist)/<alpha-value>)",
 

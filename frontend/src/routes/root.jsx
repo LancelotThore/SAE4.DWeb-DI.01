@@ -9,7 +9,7 @@ export default function Root() {
   return (
     <section className='text-forground flex flex-col font-montserrat relative min-h-screen pb-[4rem]'>
       <div className='flex items-center'>
-        {isSmallScreen ? <NavBar /> : <NavBarDesktop className="w-7 h-7 m-4" />}
+        {isSmallScreen ? <NavBar /> : <NavBarDesktop className="w-7 h-7 m-4 ml-7" />}
       </div>
       <Outlet />
     </section>
