@@ -6,7 +6,7 @@ import Root from './routes/root.jsx';
 import About from './routes/about.jsx';
 import ErrorPage from './ui/ErrorPage/index.jsx';
 import Home, { loader as homeLoader } from './routes/home.jsx';
-import MoviePage, { loader as moviePageLoader } from './routes/MoviePage.jsx';
+import MoviePage, { loader as moviePageLoader } from './routes/moviePage.jsx';
 
 import './index.css';
 

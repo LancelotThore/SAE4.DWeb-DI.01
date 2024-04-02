@@ -26,6 +26,7 @@ class MovieCrudController extends AbstractCrudController
             ->setUploadDir('public/uploads/') // Le dossier où les images seront téléchargées
             ->setUploadedFileNamePattern('[randomhash].[extension]') // Le nom du fichier sera un hash aléatoire
             ->setRequired(false); // Le champ image n'est pas obligatoire
+        yield TextField::new('description');
     }
     
 }
