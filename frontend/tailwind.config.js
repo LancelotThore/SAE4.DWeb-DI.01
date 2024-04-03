@@ -3,13 +3,9 @@ export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
-      gridTemplateColumns: {
-        'auto': 'repeat(auto-fill, minmax(200px, 1fr))',
-      },
       fontFamily: {
         'sans': ['Montserrat', 'sans-serif'],
       },
-      
       colors: {
         /* Background */
         background: "hsl(var(--background)/<alpha-value>)",

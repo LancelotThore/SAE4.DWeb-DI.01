@@ -13,7 +13,7 @@ export default function Header({data}) {
                 <div className="flex flex-col">
                     <p className="text-base order-1">Le interviste di Peter Gomez</p>
                     <h1 className="text-4xl font-bold order-2">{data.name}</h1>
-                    <ul className="flex pt-1 pb-4 gap-2.5 text-sm opacity-60 order-3">
+                    <ul className="flex pt-1 pb-4 gap-2.5 text-sm opacity-60 order-3 flex-wrap">
                         {data.category.map((cat) => (
                             <li key={cat.id}>{cat.name}</li>
                         ))}

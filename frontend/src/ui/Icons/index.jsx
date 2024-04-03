@@ -164,4 +164,44 @@ function ArrowLeft({ ...props }) {
     );
 }
 
-export { HomeButton, DirectButton, Catalogue, Search, Other, Burger, Cross, CursorCross, LogoX, LogoFacebook, ArrowRight, ArrowLeft };
+function BtnArrowLeft({ ...props }) {
+    return (
+        <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 800 800"
+            {...props}
+        >
+            <circle cx="400" cy="400" r="400" fill="currentColor"></circle>
+            <path
+                stroke="#fff"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="57"
+                d="M487 225L312 400l175 175"
+            ></path>
+        </svg>
+    );
+}
+
+function BtnArrowRight({ ...props }) {
+    return (
+        <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 800 800"
+            {...props}
+        >
+            <circle cx="400" cy="400" r="400" fill="currentColor" transform="matrix(-1 0 0 1 800 0)"></circle>
+            <path
+                stroke="#fff"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="57"
+                d="M313 225l175 175-175 175"
+            ></path>
+        </svg>
+    );
+}
+
+export { HomeButton, DirectButton, Catalogue, Search, Other, Burger, Cross, CursorCross, LogoX, LogoFacebook, ArrowRight, ArrowLeft, BtnArrowLeft, BtnArrowRight};

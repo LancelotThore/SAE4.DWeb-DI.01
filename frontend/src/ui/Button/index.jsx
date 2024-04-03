@@ -27,6 +27,11 @@ const button = cva(base, {
         "hover:bg-gray-100",
         "rounded"
       ],
+      carrouselBtn: [
+        "absolute",
+        "top-1/2",
+        "transform",
+      ]
     },
     size: {
       small: ["text-sm", "py-2.5", "px-3.5"],
