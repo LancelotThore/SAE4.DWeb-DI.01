@@ -22,10 +22,10 @@ class MovieCrudController extends AbstractCrudController
         yield TextField::new('name');
         yield AssociationField::new('category');
         yield ImageField::new('image')
-            ->setBasePath('uploads/') // Le chemin où les images sont stockées
-            ->setUploadDir('public/uploads/') // Le dossier où les images seront téléchargées
-            ->setUploadedFileNamePattern('[randomhash].[extension]') // Le nom du fichier sera un hash aléatoire
-            ->setRequired(false); // Le champ image n'est pas obligatoire
+            ->setBasePath('uploads/')
+            ->setUploadDir('public/uploads/')
+            ->setUploadedFileNamePattern('[randomhash].[extension]')
+            ->setRequired(false);
         yield TextField::new('description');
         yield TextField::new('video');
     }

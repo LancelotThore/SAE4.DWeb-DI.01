@@ -54,6 +54,9 @@ const router = createBrowserRouter([
         element: <MoviePage />,
         loader: ({ params }) => moviePageLoader({ id: params.movieId }),
       },
+      {
+        path: '/category/:categoryId'
+      }
     ]
   },
   {
