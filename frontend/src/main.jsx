@@ -11,6 +11,7 @@ import WatchMovie, { loader as watchMovieLoader} from './routes/watchMovie.jsx';
 
 import './index.css';
 import CataloguePage, { loader as catalogueLoader } from './routes/cataloguePage.jsx';
+import SearchPage from './routes/searchPage.jsx';
 
 const router = createBrowserRouter([
   {
@@ -33,7 +34,8 @@ const router = createBrowserRouter([
       },
       {
         path: '/search',
-
+        element: <SearchPage />,
+        loader: catalogueLoader,
       },
       {
         path: '/other',
