@@ -58,13 +58,43 @@ export default function List({ cat }) {
             <p className="pb-2">{cat.name}</p>
             <div className="flex overflow-hidden" ref={listRef}>
                 <ul className="flex gap-2 flex-nowrap">
-                    {cat.movies.map((movie, index) => (
+                    {cat.movies.map((movie) => (
                         <MovieCard key={movie.id} movie={movie} />
                     ))}
                 </ul>
             </div>
-            {isOverflowing && !atStart && <BtnArrowLeft className='absolute top-1/2 left-0 transform w-12 text-navBackground' onClick={handlePrev} />}
-            {isOverflowing && !atEnd && <BtnArrowRight className='absolute top-1/2 right-0 transform w-12 text-navBackground' onClick={handleNext} />}
+            {isOverflowing && !atStart && <BtnArrowLeft className='absolute top-1/2 left-0 transform w-12 text-navBackground cursor-pointer' onClick={handlePrev} />}
+            {isOverflowing && !atEnd && <BtnArrowRight className='absolute top-1/2 right-0 transform w-12 text-navBackground cursor-pointer' onClick={handleNext} />}
         </li>
     );
 }
+
+function ListResult({ results }) {
+    if (results.length === 0) {
+        return <div className='flex items-center justify-center mt-10 mx-7'>Aucun résultat trouvé</div>;
+    }
+
+    return (
+        <div className="flex overflow-hidden my-10 mx-7">
+            <ul className="flex gap-2 flex-nowrap">
+                {results.map((movie) => (
+                    <MovieCard key={movie.id} movie={movie} />
+                ))}
+            </ul>
+        </div>
+    );
+}
+
+function ListCat({ category }) {
+    return (
+        <div className="flex overflow-hidden my-10 mx-7">
+            <ul className="flex gap-2 flex-nowrap">
+                {category.movies.map((movie) => (
+                    <MovieCard key={movie.id} movie={movie} />
+                ))}
+            </ul>
+        </div>
+    );
+}
+
+export { ListResult, ListCat};

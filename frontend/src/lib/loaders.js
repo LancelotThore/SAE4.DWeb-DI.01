@@ -56,3 +56,9 @@ export async function fetchCategory({id}) {
     let data = await answer.json();
     return data;
 }
+
+export async function fetchSearch({query}) {
+    let answer = await fetch(`http://localhost:8080/api/search/${query}`);
+    let data = await answer.json();
+    return data;
+}

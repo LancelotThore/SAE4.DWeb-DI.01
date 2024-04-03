@@ -17,12 +17,12 @@ class Movie
    #[ORM\Id]
    #[ORM\GeneratedValue]
    #[ORM\Column]
-   #[Groups(['json_movies', 'json_category'])]
+   #[Groups(['json_movies', 'json_category', 'json_search'])]
    private ?int $id = null;
 
 
     #[ORM\Column(length: 255)]
-    #[Groups(['json_movies', 'json_category'])]
+    #[Groups(['json_movies', 'json_category', 'json_search'])]
     private ?string $name = null;
 
     #[ORM\ManyToMany(targetEntity: Category::class, inversedBy: 'movies')]
@@ -30,7 +30,7 @@ class Movie
     private Collection $category;
 
     #[ORM\Column(length: 255)]
-    #[Groups(['json_movies', 'json_category'])]
+    #[Groups(['json_movies', 'json_search', 'json_category'])]
     private ?string $image = null;
 
     #[ORM\Column(type: Types::TEXT)]

@@ -47,9 +47,10 @@ function NavBar() {
 
 function NavBarDesktop({ ...props }) {
   return (
-    <div className='flex items-center h-[4.5rem] z-40 fixed top-0'>
+    <div className='flex items-center h-[4.5rem] z-40 fixed top-0 w-full'>
       <MenuBurger {...props} />
       <Link to="/"><img className="w-24 z-10 m-4" src="/logo.webp" alt="" /></Link>
+      <Link to="/search"><Search className="w-8 absolute top-0 right-0 m-4 z-40" /></Link>
     </div>
   )
 }

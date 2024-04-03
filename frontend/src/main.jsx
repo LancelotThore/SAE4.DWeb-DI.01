@@ -12,6 +12,7 @@ import WatchMovie, { loader as watchMovieLoader} from './routes/watchMovie.jsx';
 import './index.css';
 import CataloguePage, { loader as catalogueLoader } from './routes/cataloguePage.jsx';
 import SearchPage from './routes/searchPage.jsx';
+import CategoryPage, { loader as categoryPageLoader } from './routes/categoryPage.jsx';
 
 const router = createBrowserRouter([
   {
@@ -57,7 +58,9 @@ const router = createBrowserRouter([
         loader: ({ params }) => moviePageLoader({ id: params.movieId }),
       },
       {
-        path: '/category/:categoryId'
+        path: '/category/:categoryId',
+        element: <CategoryPage />,
+        loader: ({ params }) => categoryPageLoader({ id: params.categoryId }),
       }
     ]
   },
