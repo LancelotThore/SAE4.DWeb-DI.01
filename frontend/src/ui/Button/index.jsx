@@ -6,19 +6,6 @@ const base = "";
 const button = cva(base, {
   variants: {
     intent: {
-      primary: [
-        "bg-blue-500",
-        "text-white",
-        "border-transparent",
-        "rounded-md",
-        "font-bold"
-      ],
-      secondary: [
-        "bg-red-600",
-        "text-gray-200",
-        "border-gray-400",
-        "hover:bg-gray-100",
-      ],
       tertiary: [
         "text-start",
         "text-textButton",
@@ -31,7 +18,17 @@ const button = cva(base, {
         "absolute",
         "top-1/2",
         "transform",
-      ]
+      ],
+      searchBtn: [
+        "rounded-r-lg",
+        "flex",
+        "items-center",
+        "justify-center",
+        "text-forground",
+        "px-4",
+        "py-2",
+        "bg-navBackground",
+      ],
     },
     size: {
       small: ["text-sm", "py-2.5", "px-3.5"],

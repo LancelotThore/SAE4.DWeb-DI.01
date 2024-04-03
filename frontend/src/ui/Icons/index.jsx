@@ -204,4 +204,4 @@ function BtnArrowRight({ ...props }) {
     );
 }
 
-export { HomeButton, DirectButton, Catalogue, Search, Other, Burger, Cross, CursorCross, LogoX, LogoFacebook, ArrowRight, ArrowLeft, BtnArrowLeft, BtnArrowRight};
+export { HomeButton, DirectButton, Catalogue, Search, Other, Burger, Cross, CursorCross, LogoX, LogoFacebook, ArrowRight, ArrowLeft, BtnArrowLeft, BtnArrowRight };
