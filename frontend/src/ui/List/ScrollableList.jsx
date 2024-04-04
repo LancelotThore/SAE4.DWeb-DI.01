@@ -46,7 +46,7 @@ export default function ScrollableList({ items, renderItem, className }) {
     }, []);
 
     return (
-        <li className={`mt-3 mx-7 relative ${className}`}>
+        <div className={`mt-3 mx-7 relative ${className}`}>
             <div className='flex overflow-hidden' ref={listRef}>
                 <ul className="flex gap-2 flex-nowrap">
                     {items.map(renderItem)}
@@ -54,6 +54,6 @@ export default function ScrollableList({ items, renderItem, className }) {
             </div>
             {isOverflowing && !atStart && <BtnArrowLeft className='absolute top-1/2 left-0 transform w-12 text-navBackground -translate-y-1/2 cursor-pointer' onClick={handlePrev} />}
             {isOverflowing && !atEnd && <BtnArrowRight className='absolute top-1/2 right-0 transform w-12 text-navBackground -translate-y-1/2 cursor-pointer' onClick={handleNext} />}
-        </li>
+        </div>
     );
 };

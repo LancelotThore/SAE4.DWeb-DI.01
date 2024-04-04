@@ -67,7 +67,7 @@ const router = createBrowserRouter([
     path: '/regarder/:movieId',
     element: <WatchMovie />,
     loader: ({ params }) => watchMovieLoader({ id: params.movieId }),
-  }
+  },
 ]);
 
 const rootElement = document.querySelector('#root');

@@ -8,6 +8,7 @@ use EasyCorp\Bundle\EasyAdminBundle\Field\IdField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextEditorField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\ChoiceField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\EmailField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\ImageField;
 
 
 class UserCrudController extends AbstractCrudController
@@ -27,10 +28,18 @@ class UserCrudController extends AbstractCrudController
         $roles->setChoices(['ROLE_USER' => 'ROLE_USER', 'ROLE_ADMIN' => 'ROLE_ADMIN']);
         // autoriser le choix multiple
         $roles->allowMultipleChoices();
+
+        $image = ImageField::new('image')
+            ->setBasePath('profils/')
+            ->setUploadDir('public/profils/')
+            ->setUploadedFileNamePattern('[randomhash].[extension]')
+            ->setRequired(false);
+
         // retourner les champs
         return [
             $email,
-            $roles
+            $roles,
+            $image
         ];
     }
 }

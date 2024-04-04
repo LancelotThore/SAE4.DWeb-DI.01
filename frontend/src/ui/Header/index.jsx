@@ -18,7 +18,7 @@ export default function Header({data}) {
                             <li key={cat.id}>{cat.name}</li>
                         ))}
                     </ul>
-                    <Link className="flex w-full order-4 sm:order-5" to={`/regarder/${data.id}`}>
+                    <Link className="flex w-full sm:w-fit order-4 sm:order-5" to={`/regarder/${data.id}`}>
                         <Button intent="tertiary" size="small" className="flex w-full sm:w-fit"><ArrowRight className="h-5 w-5 mr-1"/>Regarder</Button>
                     </Link>
                     <p className="my-6 order-5 sm:order-4">{data.description}</p>

@@ -52,8 +52,9 @@ function NavBarDesktop({ ...props }) {
       <MenuBurger {...props} />
       <Link to="/"><img className="w-24 z-10 m-4" src="/logo.webp" alt="" /></Link>
       <div className='flex absolute right-4 items-center justify-center gap-4'>
-        <Link to="/search"><Search className="w-8 z-40"/></Link>
-        <Link to="/connexion"><Button intent="connexionBtn" size="small" className="z-40">Connexion</Button></Link>
+        <Link to="/search"><Search className="w-8 z-40" /></Link>
+        <Button intent="connexionBtn" size="small" className="z-40" onClick={() => window.location.href = 'http://localhost:8080/login'}>Connexion</Button>
+        <img src="" alt="" />
       </div>
     </div>
   )

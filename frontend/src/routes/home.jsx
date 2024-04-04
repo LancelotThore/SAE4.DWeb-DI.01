@@ -17,7 +17,7 @@ export default function Home() {
         <>
             <Header data={movie} />
             <ul>
-                {categories.map((cat, index) => (
+                {categories.map((cat) => (
                     <List key={cat.id} cat={cat} />
                 ))}
             </ul>
