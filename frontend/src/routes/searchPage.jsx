@@ -39,10 +39,9 @@ export default function SearchPage() {
                     <Search className="h-8"/>
                 </Button>
             </form>
-            <div>
-                
-            </div>
-            {isLoading ? 'Chargement...' : <ListResult results={results} />}
+            <ul>
+                {isLoading ? 'Chargement...' : <ListResult results={results} />}    
+            </ul>
             <CataloguePage />
         </div>
     )

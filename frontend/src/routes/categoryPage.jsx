@@ -10,8 +10,10 @@ export default function CategoryPage() {
     const category = useLoaderData();
     return (
         <>
-            <h1>{category.name}</h1>
-            <ListCat category={category} />
+            <h1  className='text-center pt-20 pb-5 font-bold text-base'>{category.name}</h1>
+            <ul className=''>
+                <ListCat cats={category} />
+            </ul>
         </>
     )
 }

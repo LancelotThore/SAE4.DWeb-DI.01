@@ -14,7 +14,7 @@ function MenuBurger({ ...props }) {
     };
 
     return (
-        <div className='relative flex'>
+        <div className='relative flex h-full'>
             <button onClick={toggleMenu}>
                 {isOpen ? <Burger {...props} /> : <Burger {...props} />}
             </button>
@@ -22,7 +22,7 @@ function MenuBurger({ ...props }) {
             {isOpen && (
                 <>
                     <div onClick={closeMenu} className='absolute h-screen w-screen z-20 -mt-2 bg-openNavBackground opacity-80'></div>
-                    <nav className={`absolute h-screen min-w-80 bg-navBackground z-30 flex flex-col items-start justify-between -mt-2 py-16 px-20 transition-transform duration-1000 ease-in-out text-lg font-semibold ${isOpen ? 'transform translate-x-0' : 'transform -translate-x-full'}`}>
+                    <nav className={`fixed left-0 h-screen min-w-80 bg-navBackground z-30 flex flex-col items-start justify-between py-16 px-20 transition-transform duration-1000 ease-in-out text-lg font-semibold ${isOpen ? 'transform translate-x-0' : 'transform -translate-x-full'}`}>
                         <div>
                             <Cross onClick={toggleMenu} className="absolute w-7 pt-1.5 left-8 cursor-pointer" />
                             <Link to="/"><img className="w-24" src="/logo.webp" alt="Logo" /></Link>

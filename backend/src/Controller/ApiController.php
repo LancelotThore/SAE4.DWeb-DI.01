@@ -68,7 +68,7 @@ class ApiController extends AbstractController
     #[Route('/api/search/{query}', name: 'app_api_search')]
     public function search(string $query, MovieRepository $movieRepository, SerializerInterface $serializer): Response
     {
-      $query = '%' . $query . '%'; // Wrap the query with % for the LIKE operator
+      $query = '%' . $query . '%';
       $movies = $movieRepository->createQueryBuilder('m')
           ->where('m.name LIKE :query')
           ->setParameter('query', $query)

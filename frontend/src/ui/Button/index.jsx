@@ -29,6 +29,18 @@ const button = cva(base, {
         "py-2",
         "bg-navBackground",
       ],
+      connexionBtn: [
+        "py-2",
+        "px-5",
+        "rounded",
+        "text-forground",
+        "border-2",
+        "border-forground",
+        "bg-forground/10",
+        "hover:bg-forground",
+        "hover:text-navBackground",
+        "font-bold",
+      ]
     },
     size: {
       small: ["text-sm", "py-2.5", "px-3.5"],

@@ -1,6 +1,6 @@
 import { fetchCategories, fetchMovie } from "../lib/loaders";
 import Header from "../ui/Header";
-import List from "../ui/List";
+import { List } from "../ui/List";
 import { useLoaderData } from 'react-router-dom';
 
 export async function loader() {
