@@ -3,6 +3,7 @@ import Button from "../Button";
 import { Link } from "react-router-dom";
 
 export default function Header({data}) {
+    let test = document.cookie;
     return (
         <header className="relative w-full min-h-[27.5rem] flex flex-col justify-center md:justify-start md:flex-row md:items-center">
             <div className="w-full md:w-[68%] h-96 md:h-full right-0 md:absolute bg-cover relative" style={{ backgroundImage: `url(/affiches/${data.image})` }}>

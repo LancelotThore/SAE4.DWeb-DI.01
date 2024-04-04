@@ -12,6 +12,8 @@ use App\Repository\CategoryRepository;
 use Symfony\Component\Serializer\SerializerInterface;
 use Symfony\Component\HttpFoundation\JsonResponse;
 
+use Symfony\Component\HttpFoundation\Request;
+
 class ApiController extends AbstractController
 {
     #[Route('/api', name: 'app_api')]
@@ -80,4 +82,35 @@ class ApiController extends AbstractController
       return $response;
     }
 
+    #[Route('/api/user', name: 'app_api_user')]
+    public function getUserInfo(SerializerInterface $serializer): JsonResponse
+    {
+      $user = $this->getUser();
+
+      if ($user) {
+          $data = $serializer->normalize($user, null, ['groups' => 'json_user']);
+          return new JsonResponse($data);
+      }
+
+      return new JsonResponse(['error' => 'Not logged in']);
+    }
+
+    #[Route('/api/playlist/', name: 'app_api_playlist')]
+    public function getUserMovies(SerializerInterface $serializer): JsonResponse
+    {
+      $user = $this->getUser();
+
+      if ($user) {
+        $movies = $user->getMovie();
+    
+        if (!$movies->isEmpty()) {
+            $data = $serializer->normalize($movies, null, ['groups' => 'json_playlist']);
+            return new JsonResponse($data);
+        }
+    
+        return new JsonResponse(['error' => 'No movies found for this user']);
+    }
+    
+    return new JsonResponse(['error' => 'Not logged in']);
+    }
 }

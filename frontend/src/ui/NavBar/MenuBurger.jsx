@@ -30,15 +30,15 @@ function MenuBurger({ ...props }) {
                             <Cross onClick={toggleMenu} className="absolute w-7 pt-1.5 left-8 cursor-pointer" />
                             <Link to="/"><img className="w-24" src="/logo.webp" alt="Logo" /></Link>
                             <ul className='flex flex-col pt-14 gap-8'>
-                                <li><NavLink className={classActive}  to="/">Home</NavLink></li>
+                                <li><NavLink className={classActive}  to="/">Accueil</NavLink></li>
                                 <li><NavLink className={classActive} to="/direct">Direct</NavLink></li>
                                 <li><NavLink className={classActive} to="/catalogue">Catalogue</NavLink></li>
                                 <li><NavLink className={classActive} to="/playlist">Playlist</NavLink></li>
                             </ul>
                         </div>
                         <ul className='flex flex-col gap-8'>
-                            <li><NavLink className={classActive} to="settings">Paramètres</NavLink></li>
-                            <li><NavLink className={classActive} to="support">Support</NavLink></li>
+                            <li><NavLink className={classActive} to="/settings">Paramètres</NavLink></li>
+                            <li><NavLink className={classActive} to="/support">Support</NavLink></li>
                         </ul>
                     </nav>
                 </>

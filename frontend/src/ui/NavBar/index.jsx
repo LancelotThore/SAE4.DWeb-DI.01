@@ -19,7 +19,7 @@ function NavBar() {
 
         <NavLink className={classActive} to="/">
           <HomeButton className={icon} />
-          <p className={text}>Home</p>
+          <p className={text}>Accueil</p>
         </NavLink>
 
         <NavLink className={classActive} to="/direct">
@@ -34,27 +34,30 @@ function NavBar() {
 
         <NavLink className={classActive} to="/search">
           <Search className={icon} />
-          <p className={text}>Search</p>
+          <p className={text}>Recherche</p>
         </NavLink>
 
         <NavLink className={classActive} to="/other">
           <Other className={icon} />
-          <p className={text}>Other</p>
+          <p className={text}>Autre</p>
         </NavLink>
       </nav>
     </>
   );
 }
 
-function NavBarDesktop({ ...props }) {
+function NavBarDesktop({ user, ...props }) {
   return (
     <div className='flex items-center h-[4.5rem] z-40 fixed top-0 w-full relative'>
       <MenuBurger {...props} />
       <Link to="/"><img className="w-24 z-10 m-4" src="/logo.webp" alt="" /></Link>
-      <div className='flex absolute right-4 items-center justify-center gap-4'>
+      <div className='flex absolute right-4 items-center justify-center gap-5'>
         <Link to="/search"><Search className="w-8 z-40" /></Link>
-        <Button intent="connexionBtn" size="small" className="z-40" onClick={() => window.location.href = 'http://localhost:8080/login'}>Connexion</Button>
-        <img src="" alt="" />
+        {user && user.image ? (
+          <Link to="/other" className='mr-2'><img className='rounded-md h-11 w-11' src={`/profils/${user.image}`} alt="" /></Link>
+        ) : (
+          <Button intent="connexionBtn" size="small" className="z-40" onClick={() => window.location.href = 'http://localhost:8080/login'}>Connexion</Button>
+        )}
       </div>
     </div>
   )

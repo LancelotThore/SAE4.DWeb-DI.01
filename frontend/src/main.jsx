@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
-import Root from './routes/root.jsx';
+import Root, {loader as userLoader} from './routes/root.jsx';
 import ErrorPage from './ui/ErrorPage/index.jsx';
 import Home, { loader as homeLoader } from './routes/home.jsx';
 import MoviePage, { loader as moviePageLoader } from './routes/moviePage.jsx';
@@ -12,11 +12,13 @@ import './index.css';
 import CataloguePage, { loader as catalogueLoader } from './routes/cataloguePage.jsx';
 import SearchPage from './routes/searchPage.jsx';
 import CategoryPage, { loader as categoryPageLoader } from './routes/categoryPage.jsx';
+import Other, { loader as otherLoader } from './routes/other.jsx';
 
 const router = createBrowserRouter([
   {
     path: '/',
     element: <Root />,
+    loader: userLoader,
     errorElement: <ErrorPage />,
     children: [
       {
@@ -39,7 +41,8 @@ const router = createBrowserRouter([
       },
       {
         path: '/other',
-
+        element: <Other />,
+        loader: otherLoader,
       },
       {
         path: '/settings',
