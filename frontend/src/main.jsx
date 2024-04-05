@@ -1,18 +1,25 @@
-import React, { Children } from 'react';
+import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
-import Root from './routes/root.jsx';
-import About from './routes/about.jsx';
+import Root, {loader as userLoader} from './routes/root.jsx';
 import ErrorPage from './ui/ErrorPage/index.jsx';
 import Home, { loader as homeLoader } from './routes/home.jsx';
+import MoviePage, { loader as moviePageLoader } from './routes/moviePage.jsx';
+import WatchMovie, { loader as watchMovieLoader} from './routes/watchMovie.jsx';
 
 import './index.css';
+import CataloguePage, { loader as catalogueLoader } from './routes/cataloguePage.jsx';
+import SearchPage from './routes/searchPage.jsx';
+import CategoryPage, { loader as categoryPageLoader } from './routes/categoryPage.jsx';
+import Other, { loader as otherLoader } from './routes/other.jsx';
+import Playlist, { loader as playlistLoader } from './routes/playlist.jsx';
 
 const router = createBrowserRouter([
   {
     path: '/',
     element: <Root />,
+    loader: userLoader,
     errorElement: <ErrorPage />,
     children: [
       {
@@ -25,31 +32,47 @@ const router = createBrowserRouter([
       },
       {
         path: '/catalogue',
-        
+        element: <CataloguePage />,
+        loader: catalogueLoader,
       },
       {
         path: '/search',
-        
+        element: <SearchPage />,
+        loader: catalogueLoader,
       },
       {
         path: '/other',
-        
+        element: <Other />,
+        loader: otherLoader,
       },
       {
         path: '/settings',
-        
+
       },
       {
         path: '/support',
       },
       {
         path: '/playlist',
+        element: <Playlist />,
+        loader: playlistLoader,
+      },
+      {
+        path: '/film/:movieId',
+        element: <MoviePage />,
+        loader: ({ params }) => moviePageLoader({ id: params.movieId }),
+      },
+      {
+        path: '/category/:categoryId',
+        element: <CategoryPage />,
+        loader: ({ params }) => categoryPageLoader({ id: params.categoryId }),
       }
     ]
   },
   {
-    path: '/about',
-    element: <About />
+    path: '/regarder/:movieId',
+    element: <WatchMovie />,
+    loader: ({ params }) => watchMovieLoader({ id: params.movieId }),
   },
 ]);
 

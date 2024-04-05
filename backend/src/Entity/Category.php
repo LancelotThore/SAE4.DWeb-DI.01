@@ -16,17 +16,21 @@ class Category
    #[ORM\Id]
    #[ORM\GeneratedValue]
    #[ORM\Column]
-   #[Groups(['json_movie'])]
+   #[Groups([ 'json_movies', 'json_movie', 'json_category', 'json_category_name'])]
    private ?int $id = null;
 
 
    #[ORM\Column(length: 255)]
-   #[Groups(['json_movie'])]
+   #[Groups([ 'json_movies', 'json_movie', 'json_category', 'json_category_name'])]
    private ?string $name = null;
 
 
    #[ORM\ManyToMany(targetEntity: Movie::class, mappedBy: 'category')]
    private Collection $movies;
+
+   #[ORM\Column(length: 255)]
+   #[Groups(['json_category_name'])]
+   private ?string $image = null;
 
 
     public function __construct()
@@ -79,6 +83,18 @@ class Category
         if ($this->movies->removeElement($movie)) {
             $movie->removeCategory($this);
         }
+
+        return $this;
+    }
+
+    public function getImage(): ?string
+    {
+        return $this->image;
+    }
+
+    public function setImage(string $image): static
+    {
+        $this->image = $image;
 
         return $this;
     }
