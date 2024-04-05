@@ -11,7 +11,7 @@ export default function Playlist() {
     const playlist = useLoaderData();
 
     return (
-        <div className="flex flex-col mt-24 px-10">
+        <div className="flex flex-col mt-24">
             {playlist && playlist.length > 0 ? (
                 <ListResult results={playlist} />
             ) : (

@@ -66,12 +66,15 @@ function Burger({ ...props }) {
     return (
         <svg
             xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 32 32"
+            fill="none"
+            viewBox="0 0 24 24"
             {...props}
         >
             <path
                 fill="currentColor"
-                d="M25 6H3a1 1 0 000 2h22a1 1 0 100-2zM29 15H3a1 1 0 000 2h26a1 1 0 000-2zM3 26h13a1 1 0 000-2H3a1 1 0 000 2z"
+                fillRule="evenodd"
+                d="M4 4a1 1 0 000 2h12a1 1 0 100-2H4zm-1 8a1 1 0 011-1h16a1 1 0 110 2H4a1 1 0 01-1-1zm9 8H4a1 1 0 110-2h8a1 1 0 110 2z"
+                clipRule="evenodd"
             ></path>
         </svg>
     );
@@ -198,20 +201,58 @@ function BtnArrowRight({ ...props }) {
 function Plus({ ...props }) {
     return (
         <svg
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 24 24"
-          {...props}
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            {...props}
         >
-          <path fill="transparent" d="M0 0H24V24H0z"></path>
-          <path
-            stroke="currentColor"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            d="M12 6v12M6 12h12"
-          ></path>
+            <path fill="transparent" d="M0 0H24V24H0z"></path>
+            <path
+                stroke="currentColor"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M12 6v12M6 12h12"
+            ></path>
         </svg>
-      );
+    );
 }
 
-export { HomeButton, DirectButton, Catalogue, Search, Other, Burger, Cross, LogoX, LogoFacebook, ArrowRight, ArrowLeft, BtnArrowLeft, BtnArrowRight, Plus };
+function Tick({ ...props }) {
+    return (
+        <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 -0.5 25 25"
+            {...props}
+        >
+            <path
+                stroke="currentColor"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="1.5"
+                d="M5.5 12.5l4.667 4.5L19.5 8"
+            ></path>
+        </svg>
+    );
+}
+
+function PageZoom({ ...props }) {
+    return (
+        <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="currentColor"
+            version="1.1"
+            viewBox="0 0 512 512"
+            xmlSpace="preserve"
+            {...props}
+        >
+            <path d="M472.178 34.62H39.822C17.864 34.62 0 52.485 0 74.442v363.115c0 21.958 17.864 39.822 39.822 39.822h432.356c21.958 0 39.822-17.864 39.822-39.822V74.442c0-21.957-17.864-39.822-39.822-39.822zm5.689 402.937a5.695 5.695 0 01-5.689 5.689H39.822a5.695 5.695 0 01-5.689-5.689V153.839h443.733v283.718zm0-317.851H34.133V74.442a5.695 5.695 0 015.689-5.689h432.356a5.695 5.695 0 015.689 5.689v45.264z"></path>
+            <circle cx="71.805" cy="94.231" r="12.836"></circle>
+            <circle cx="112.959" cy="94.231" r="12.836"></circle>
+            <circle cx="154.112" cy="94.231" r="12.836"></circle>
+            <path d="M263.523 330.201l73.698 73.698c6.664 6.665 17.471 6.666 24.136 0 6.665-6.665 6.665-17.471 0-24.136l-73.698-73.698c18.695-29.706 15.142-69.506-10.702-95.348-29.991-29.992-78.791-29.991-108.783 0-29.992 29.991-29.992 78.791 0 108.783 25.645 25.644 65.364 29.57 95.349 10.701zm-71.213-95.348c16.684-16.683 43.827-16.683 60.512 0 16.683 16.683 16.683 43.828 0 60.51-16.683 16.683-43.828 16.683-60.512 0-16.684-16.681-16.684-43.828 0-60.51z"></path>
+        </svg>
+    );
+}
+
+export { HomeButton, DirectButton, Catalogue, Search, Other, Burger, Cross, LogoX, LogoFacebook, ArrowRight, ArrowLeft, BtnArrowLeft, BtnArrowRight, Plus, Tick, PageZoom };

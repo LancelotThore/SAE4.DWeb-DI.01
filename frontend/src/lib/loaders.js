@@ -54,3 +54,15 @@ export async function fetchPlaylist() {
     let data = await answer.json();
     return data;
 }
+
+export async function fetchAddPlaylist({id}) {
+    let answer = await fetch(`http://localhost:8080/api/playlist/add/${id}`, {credentials: 'include', method: 'POST'});
+    let data = await answer.json();
+    return data;
+}
+
+export async function fetchRemovePlaylist({id}) {
+    let answer = await fetch(`http://localhost:8080/api/playlist/remove/${id}`, {credentials: 'include', method: 'DELETE'});
+    let data = await answer.json();
+    return data;
+}

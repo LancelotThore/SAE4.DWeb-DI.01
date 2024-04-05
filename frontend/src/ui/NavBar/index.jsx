@@ -47,16 +47,28 @@ function NavBar() {
 }
 
 function NavBarDesktop({ user, ...props }) {
+
+  const handleLogin = () => {
+    window.location.href = 'http://localhost:8080/login';
+  }
+
+  const handleRegister = () => {
+    window.location.href = 'http://localhost:8080/register';
+  }
+
   return (
     <div className='flex items-center h-[4.5rem] z-40 fixed top-0 w-full relative'>
       <MenuBurger {...props} />
       <Link to="/"><img className="w-24 z-10 m-4" src="/logo.webp" alt="" /></Link>
-      <div className='flex absolute right-4 items-center justify-center gap-5'>
-        <Link to="/search"><Search className="w-8 z-40" /></Link>
+      <div className='flex absolute right-4 items-center justify-center gap-5 z-40'>
+        <Link to="/search"><Search className="w-8" /></Link>
         {user && user.image ? (
           <Link to="/other" className='mr-2'><img className='rounded-md h-11 w-11' src={`/profils/${user.image}`} alt="" /></Link>
         ) : (
-          <Button intent="connexionBtn" size="small" className="z-40" onClick={() => window.location.href = 'http://localhost:8080/login'}>Connexion</Button>
+          <>
+            <Button intent="connexionBtn" size="small" onClick={handleLogin}>Connexion</Button>
+            <Button intent="inscriptionBtn" size="small" onClick={handleRegister}>S'inscrire</Button>
+          </>
         )}
       </div>
     </div>

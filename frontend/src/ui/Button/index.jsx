@@ -12,7 +12,7 @@ const button = cva(base, {
         "font-bold",
         "bg-gradient-to-r from-buttonA to-buttonB",
         "hover:bg-gradient-to-l from-buttonA to-buttonB",
-        "rounded"
+        "rounded",
       ],
       carrouselBtn: [
         "absolute",
@@ -40,9 +40,32 @@ const button = cva(base, {
         "hover:bg-forground",
         "hover:text-navBackground",
         "font-bold",
+        "text-center",
+      ],
+      inscriptionBtn: [
+        "py-2",
+        "px-5",
+        "text-center",
+        "text-textButton",
+        "font-bold",
+        "bg-gradient-to-r from-buttonA to-buttonB",
+        "hover:bg-gradient-to-l from-buttonA to-buttonB",
+        "rounded",
+      ],
+      svgBtn: [
+        "flex",
+        "items-center",
+        "justify-center",
+        "rounded-full",
+        "w-12",
+        "h-12",
+        "bg-navBackground",
+        "hover:bg-navBackground/50",
+        "text-forground",
       ]
     },
     size: {
+      none: ["py-2", "px-2.5"],
       small: ["text-sm", "py-2.5", "px-3.5"],
       medium: ["text-base", "py-2", "px-4"],
     },

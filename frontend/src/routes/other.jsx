@@ -25,9 +25,9 @@ export default function Other() {
     return (
         <>
             {user.error === "Not logged in" ? (
-                <div className="flex mt-24 px-10 justify-between gap-1">
-                    <Button onClick={handleLogin} intent="connexionBtn">Se connecter</Button>
-                    <Button onClick={handleRegister} intent="tertiary">S'inscrire</Button>
+                <div className="grid mt-24 px-10 grid-cols-2 gap-2">
+                    <Button onClick={handleLogin} intent="connexionBtn" size="small">Se connecter</Button>
+                    <Button onClick={handleRegister} intent="inscriptionBtn" size="small">S'inscrire</Button>
                 </div>
             ) : (
                 <div className="flex flex-col mt-24 px-7 gap-8">
