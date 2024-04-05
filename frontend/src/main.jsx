@@ -13,6 +13,7 @@ import CataloguePage, { loader as catalogueLoader } from './routes/cataloguePage
 import SearchPage from './routes/searchPage.jsx';
 import CategoryPage, { loader as categoryPageLoader } from './routes/categoryPage.jsx';
 import Other, { loader as otherLoader } from './routes/other.jsx';
+import Playlist, { loader as playlistLoader } from './routes/playlist.jsx';
 
 const router = createBrowserRouter([
   {
@@ -53,6 +54,8 @@ const router = createBrowserRouter([
       },
       {
         path: '/playlist',
+        element: <Playlist />,
+        loader: playlistLoader,
       },
       {
         path: '/film/:movieId',

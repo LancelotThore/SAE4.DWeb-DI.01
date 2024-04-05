@@ -11,7 +11,7 @@ const button = cva(base, {
         "text-textButton",
         "font-bold",
         "bg-gradient-to-r from-buttonA to-buttonB",
-        "hover:bg-gray-100",
+        "hover:bg-gradient-to-l from-buttonA to-buttonB",
         "rounded"
       ],
       carrouselBtn: [

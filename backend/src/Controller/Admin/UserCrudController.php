@@ -5,7 +5,7 @@ namespace App\Controller\Admin;
 use App\Entity\User;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 use EasyCorp\Bundle\EasyAdminBundle\Field\IdField;
-use EasyCorp\Bundle\EasyAdminBundle\Field\TextEditorField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\ChoiceField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\EmailField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\ImageField;
@@ -24,6 +24,9 @@ class UserCrudController extends AbstractCrudController
     {
         // un champ de type email pour la propriété email
         $email = EmailField::new('email');
+
+        $name = TextField::new('name');
+
         // un champ de type choice(select) pour la propriété roles
         $roles = ChoiceField::new('roles');
         // définition des choix possibles pour le champ roles
@@ -40,6 +43,7 @@ class UserCrudController extends AbstractCrudController
         // retourner les champs
         return [
             $email,
+            $name,
             $roles,
             $image
         ];

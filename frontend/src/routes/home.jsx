@@ -16,7 +16,7 @@ export default function Home() {
     return (
         <>
             <Header data={movie} />
-            <ul>
+            <ul className="mt-10">
                 {categories.map((cat) => (
                     <List key={cat.id} cat={cat} />
                 ))}

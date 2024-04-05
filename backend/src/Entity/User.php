@@ -46,9 +46,15 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[Groups(['json_playlist'])]
     private Collection $movie;
 
+    #[ORM\Column(length: 255)]
+    #[Groups(['json_user'])]
+    private ?string $name = null;
+
     public function __construct()
     {
         $this->movie = new ArrayCollection();
+        $this->roles = ['ROLE_USER'];
+        $this->image = 'profil.jpg';
     }
 
     public function getId(): ?int
@@ -158,6 +164,18 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     public function removeMovie(Movie $movie): static
     {
         $this->movie->removeElement($movie);
+
+        return $this;
+    }
+
+    public function getName(): ?string
+    {
+        return $this->name;
+    }
+
+    public function setName(string $name): static
+    {
+        $this->name = $name;
 
         return $this;
     }
