@@ -11,15 +11,15 @@ export default function Other() {
     const user = useLoaderData();
 
     const handleLogout = () => {
-        window.location.href = 'http://localhost:8080/logout';
+        window.location.href = 'http://193.168.145.123:8080/logout';
     }
 
     const handleLogin = () => {
-        window.location.href = 'http://localhost:8080/login';
+        window.location.href = 'http://193.168.145.123:8080/login';
     }
 
     const handleRegister = () => {
-        window.location.href = 'http://localhost:8080/register';
+        window.location.href = 'http://193.168.145.123:8080/register';
     }
 
     return (
