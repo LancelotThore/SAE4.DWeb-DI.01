@@ -33,6 +33,6 @@ class SecurityController extends AbstractController
     #[Route(path: '/redirect', name: 'app_redirectToHome')]
     public function redirectToHome(): \Symfony\Component\HttpFoundation\RedirectResponse
     {
-        return $this->redirect('http://localhost:8090/');
+        return $this->redirect('http://localhost/');
     }
 }
