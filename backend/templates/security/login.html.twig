@@ -1,42 +1,157 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Log in!{% endblock %}
+{% block title %}Se connecter!{% endblock %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            background-color: #f7f7f7;
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            max-width: 30rem;
+            padding: 2.5rem;
+            background: white;
+            border-radius: 0.5rem;
+            box-shadow: 0 0.25rem 1.25rem rgba(0, 0, 0, 0.1);
+        }
+
+        .deco {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .deco p {
+            text-align: center;
+        }
+
+        .deco a {
+            width: unset !important;
+        }
+
+        h1 {
+            font-size: 1.5rem;
+            margin-bottom: 1.25rem;
+            color: #333;
+        }
+
+        .form-control {
+            border-radius: 0.25rem;
+            border: 1px solid #ccc;
+            padding: 0.625rem;
+            width: 100%;
+        }
+
+        .btn-primary {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 0.25rem;
+            padding: 0.625rem;
+            width: 100%;
+            font-size: 1rem;
+            text-decoration: none;
+        }
+
+        .btn-primary:hover {
+            background-color: #0056b3;
+        }
+
+        .label {
+            display: block;
+            width: 7rem;
+        }
+
+        .input {
+            display: flex;
+            align-items: center;
+            width: 100%;
+            margin-bottom: 0.9375rem;
+        }
+
+        .alert {
+            margin-bottom: 1.25rem;
+            padding: 0.625rem;
+            background-color: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+            border-radius: 0.25rem;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 1.25rem;/
+            font-size: 0.75rem;/
+            color: #666;
+        }
+
+        .login {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin-top: 1rem;
+        }
+
+        .link {
+            color: #0056b3;
+        }
+    </style>
+{% endblock %}
 
 {% block body %}
-    <form method="post">
-        {% if error %}
-            <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+    <div class="container">
+        {% if not app.user %}
+            <h1>Veuillez vous connecter</h1>
+        {% else %}
+            <h1>Vous êtes déjà connecté</h1>
         {% endif %}
+        <form method="post">
+            {% if error %}
+                <div class="alert">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+            {% endif %}
 
-        {% if app.user %}
-            <div class="mb-3">
-                You are logged in as {{ app.user.userIdentifier }}, <a href="{{ path('app_logout') }}">Logout</a>
+            {% if app.user %}
+                <div class="deco mb-3">
+                    <p>Vous êtes connecter en tant que {{ app.user.userIdentifier }}</p>
+                    <a class="btn btn-primary" href="{{ path('app_logout') }}">Se déconnecter</a>
+                </div>
+            {% endif %}
+
+            {% if not app.user %}
+                <div class="input">
+                    <label class="label" for="username">Email</label>
+                    <input type="email" value="{{ last_username }}" name="_username" id="username" class="form-control" autocomplete="email" required autofocus>
+                </div>
+                <div class="input">
+                    <label class="label" for="password">Password</label>
+                    <input type="password" name="_password" id="password" class="form-control" autocomplete="current-password" required>
+                </div>
+                <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+
+                <button class="btn btn-primary" type="submit">Se connecter</button>
+            {% endif %}
+        </form>
+        {% if not app.user %}
+            <div class="login">
+                <p>Pas encore de compte ?</p>
+                <a class="link" href="{{ path('app_register') }}">S'inscrire</a>
             </div>
         {% endif %}
-
-        <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
-        <label for="username">Email</label>
-        <input type="email" value="{{ last_username }}" name="_username" id="username" class="form-control" autocomplete="email" required autofocus>
-        <label for="password">Password</label>
-        <input type="password" name="_password" id="password" class="form-control" autocomplete="current-password" required>
-
-        <input type="hidden" name="_csrf_token"
-               value="{{ csrf_token('authenticate') }}"
-        >
-
-        {#
-            Uncomment this section and add a remember_me option below your firewall to activate remember me functionality.
-            See https://symfony.com/doc/current/security/remember_me.html
-
-            <div class="checkbox mb-3">
-                <label>
-                    <input type="checkbox" name="_remember_me"> Remember me
-                </label>
-            </div>
-        #}
-
-        <button class="btn btn-lg btn-primary" type="submit">
-            Sign in
-        </button>
-    </form>
+        <div class="footer">
+            <p>&copy; {{ "now"|date("Y") }} Raiplay. All rights reserved.</p>
+        </div>
+    </div>
 {% endblock %}

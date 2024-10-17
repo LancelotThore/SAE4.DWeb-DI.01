@@ -4,11 +4,19 @@ namespace App\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
-use Symfony\Component\Routing\Attribute\Route;
+use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
+use Symfony\Component\Security\Core\Authentication\Token\Storage\TokenStorageInterface;
+use Symfony\Component\HttpFoundation\RedirectResponse;
 
 class SecurityController extends AbstractController
 {
+    #[Route(path: '/', name: 'home')]
+    public function home(): Response
+    {
+        return $this->redirectToRoute('app_redirectToHome');
+    }
+
     #[Route(path: '/login', name: 'app_login')]
     public function login(AuthenticationUtils $authenticationUtils): Response
     {
@@ -31,8 +39,20 @@ class SecurityController extends AbstractController
     }
 
     #[Route(path: '/redirect', name: 'app_redirectToHome')]
-    public function redirectToHome(): \Symfony\Component\HttpFoundation\RedirectResponse
+    public function redirectToHome(TokenStorageInterface $tokenStorage): RedirectResponse
     {
-        return $this->redirect('http://localhost/');
+        $token = $tokenStorage->getToken();
+
+        if (!$token || !$token->getUser() || !is_object($token->getUser())) {
+            return $this->redirect('http://localhost:5173/');
+        }
+
+        $user = $token->getUser();
+
+        if (in_array('ROLE_ADMIN', $user->getRoles())) {
+            return $this->redirectToRoute('admin');
+        }
+
+        return $this->redirect('http://localhost:5173/');
     }
 }

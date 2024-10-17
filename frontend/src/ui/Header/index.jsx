@@ -83,10 +83,14 @@ export default function Header({ data }) {
                   <Button intent="svgBtn" size="none"><PageZoom className="w-full h-full" /></Button>
                 </Link>
                 {playlist.error !== "Not logged in" ? (
-                  playlist.some(movie => movie.id === data.id) ? (
-                    <Button onClick={() => handlerRemove(data.id)} intent="svgBtn" size="none"><Tick className="w-full h-full" /></Button>
+                  playlist.length > 0 && playlist.some(movie => movie.id === data.id) ? (
+                    <Button onClick={() => handlerRemove(data.id)} intent="svgBtn" size="none">
+                      <Tick className="w-full h-full" />
+                    </Button>
                   ) : (
-                    <Button onClick={() => handlerAdd(data.id)} intent="svgBtn" size="none"><Plus className="w-full h-full" /></Button>
+                    <Button onClick={() => handlerAdd(data.id)} intent="svgBtn" size="none">
+                      <Plus className="w-full h-full" />
+                    </Button>
                   )
                 ) : (
                   <></>
